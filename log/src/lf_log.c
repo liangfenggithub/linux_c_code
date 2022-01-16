@@ -280,7 +280,7 @@ unsigned long LOG_Init(const unsigned char *ucLogFileName, unsigned long ulFileS
     /*生成存储日志的文件名*/
     for (i = 0; i < NUMBER(g_ucLogFileName); i++)
     {
-        snprintf((char *)g_ucLogFileName[i], sizeof(g_ucLogFileName[i]) - 1, "%s_%02d", ucLogFileName, i);
+        snprintf((char *)g_ucLogFileName[i], sizeof(g_ucLogFileName[i]) - 1, "./%s_%02d", ucLogFileName, i);
         LOG_PRINT("Log File: %s", g_ucLogFileName[i]);
         printf("Log File: %s\n", g_ucLogFileName[i]);
     }

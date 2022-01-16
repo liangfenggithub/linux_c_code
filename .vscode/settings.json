@@ -29,7 +29,8 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "lf_log.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "eloop.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
