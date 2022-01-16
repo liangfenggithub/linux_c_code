@@ -1,0 +1,33 @@
+{
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "types.h": "c",
+        "rf_concentrator.h": "c",
+        "concentrator_port.h": "c",
+        "protocol.h": "c",
+        "hello.h": "c",
+        "main.h": "c",
+        "queue.h": "c",
+        "rf_node.h": "c",
+        "rf_channel.h": "c",
+        "rf_network.h": "c",
+        "uart.h": "c",
+        "stdio.h": "c",
+        "typedef.h": "c",
+        "select.h": "c",
+        "config.h": "c",
+        "stat.h": "c",
+        "typeinfo": "c",
+        "stddef.h": "c",
+        "array": "cpp",
+        "functional": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
