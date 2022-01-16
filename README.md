@@ -1,4 +1,4 @@
-# linux c 联系代码
+# linux c 练习代码
 
 ## 构建方式
 cmake
