@@ -30,7 +30,8 @@
         "utility": "cpp",
         "lf_log.h": "c",
         "string.h": "c",
-        "eloop.h": "c"
+        "eloop.h": "c",
+        "cstdint": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
