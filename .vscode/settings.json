@@ -31,7 +31,8 @@
         "lf_log.h": "c",
         "string.h": "c",
         "eloop.h": "c",
-        "cstdint": "c"
+        "cstdint": "c",
+        "http.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
