@@ -12,4 +12,6 @@
 * eloop 单线程eloop封装
 * httpclient http客户端 (克隆源自:https://gitee.com/topsoup/httpclient/tree/master)
 * parson json解析
+* uci_c c语言操作uci 增删查改 注意必须使用sudo执行，必须传入section name
+* mips_test mips gcc编译器测试
 

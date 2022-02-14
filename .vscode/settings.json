@@ -32,7 +32,8 @@
         "string.h": "c",
         "eloop.h": "c",
         "cstdint": "c",
-        "http.h": "c"
+        "http.h": "c",
+        "uci.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
