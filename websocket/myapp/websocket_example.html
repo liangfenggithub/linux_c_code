@@ -1,0 +1,13 @@
+ <!DOCTYPE html><html> 
+<title>Websocket example</title>
+<script>
+ var socket = new WebSocket( "ws://192.168.18.128:8000", "ws-protocol-example" );
+  function update(msg) { document.getElementById("num").innerHTML = msg; }
+ socket.onopen = function() { console.log("socket open"); update("open"); }
+ socket.onclose = function() { console.log("socket close"); update("closed"); }
+  socket.onmessage = function(msg) { console.log("socket message: " + msg.data); update(msg.data); }
+</script>
+<body>
+<h1>111</h1><p id="num">0</p>
+</body>
+</html>

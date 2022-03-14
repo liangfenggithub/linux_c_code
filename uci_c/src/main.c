@@ -113,41 +113,58 @@ int add_new_section(const char *packag, const char *section)
         struct uci_ptr ptr = {
             .p = pkg};
 
+        printf("uci_lookup_package success\n");
         // 在打开的uci配置文件中新增节点配置
         uci_add_section(ctx, pkg, section, &ptr.s);
 
-        ptr.o = NULL;
-        ptr.option = "device";
-        ptr.value = "radio0"; //默认每个设备只有一张无线网卡
-        uci_set(ctx, &ptr);
+        //测试增加数据
+        int a = 123;
+        char b[] = "hehllo";
+        char option_buff[50];
 
         ptr.o = NULL;
-        ptr.option = "network";
-        ptr.value = "lan";
+        ptr.option = "a";
+        sprintf(option_buff,"%x",a);
+        ptr.value = option_buff;
         uci_set(ctx, &ptr);
 
-        ptr.o = NULL;
-        ptr.option = "mode";
-        ptr.value = "ap"; //诱导器工作方式下，网卡的默认工作模式为ap
+                ptr.o = NULL;
+        ptr.option = "b";
+        ptr.value = b;
         uci_set(ctx, &ptr);
 
-        ptr.o = NULL;
-        ptr.option = "encryption";
-        ptr.value = acEncryption;
-        uci_set(ctx, &ptr);
+        // ptr.o = NULL;
+        // ptr.option = "device";
+        // ptr.value = "radio0"; //默认每个设备只有一张无线网卡
+        // uci_set(ctx, &ptr);
 
-        ptr.o = NULL;
-        ptr.option = "ssid";
-        ptr.value = acSsid;
-        uci_set(ctx, &ptr);
+        // ptr.o = NULL;
+        // ptr.option = "network";
+        // ptr.value = "lan";
+        // uci_set(ctx, &ptr);
 
-        if (strcmp(acEncryption, "none"))
-        {
-            ptr.o = NULL;
-            ptr.option = "key";
-            ptr.value = acPasswd;
-            uci_set(ctx, &ptr);
-        }
+        // ptr.o = NULL;
+        // ptr.option = "mode";
+        // ptr.value = "ap"; //诱导器工作方式下，网卡的默认工作模式为ap
+        // uci_set(ctx, &ptr);
+
+        // ptr.o = NULL;
+        // ptr.option = "encryption";
+        // ptr.value = acEncryption;
+        // uci_set(ctx, &ptr);
+
+        // ptr.o = NULL;
+        // ptr.option = "ssid";
+        // ptr.value = acSsid;
+        // uci_set(ctx, &ptr);
+
+        // if (strcmp(acEncryption, "none"))
+        // {
+        //     ptr.o = NULL;
+        //     ptr.option = "key";
+        //     ptr.value = acPasswd;
+        //     uci_set(ctx, &ptr);
+        // }
 
         uci_commit(ctx, &ptr.p, false);
         uci_unload(ctx, ptr.p); // load成功后采用unload，否则不用
@@ -597,7 +614,10 @@ void main(void)
     // uci_set_option_string("ptl_config","gw_0","mode","debug111");
     // uci_delete_option("ptl_config","gw_0","test");
     // delete_section("hello","globe");
-    // add_new_section("hello","new_section");
+    if(0 == add_new_section("hello","new_section"))
+    {
+        printf("add_new_section success\n");
+    }
 
 
     /*
@@ -610,37 +630,37 @@ void main(void)
             list arr 2
             list arr 4
     */
-    struct uci_ptr target = {
-        .package = "hello_2",
-        .section = "globe",
-        .option = "url",
-    };
+    // struct uci_ptr target = {
+    //     .package = "hello_2",
+    //     .section = "globe",
+    //     .option = "url",
+    // };
 
-    list_all_section("ptl_config");
-    if (0 == lfuci_get_option(&target, name,NULL,NULL))
-    {
-        printf("name is %s\n", name);
-    }
+    // list_all_section("ptl_config");
+    // if (0 == lfuci_get_option(&target, name,NULL,NULL))
+    // {
+    //     printf("name is %s\n", name);
+    // }
 
-    target.option = "arr";
-    if (0 == lfuci_get_option(&target, NULL,list_ptr,&list_len))
-    {
-        for(int i = 0; i< list_len; i++)
-        {
-            if(list_ptr[i])
-            {
-                printf("list %d is %s\n", i,list_ptr[i]);
-                free(list_ptr[i]);
-            }
-        }
-    }
+    // target.option = "arr";
+    // if (0 == lfuci_get_option(&target, NULL,list_ptr,&list_len))
+    // {
+    //     for(int i = 0; i< list_len; i++)
+    //     {
+    //         if(list_ptr[i])
+    //         {
+    //             printf("list %d is %s\n", i,list_ptr[i]);
+    //             free(list_ptr[i]);
+    //         }
+    //     }
+    // }
 
-    //get by section type
-    if (0 == lfuci_get_first_option_by_stype("hello_2", "system_setion","url",name,NULL,NULL))
-    {
-        printf("get by section type name is %s\n", name);
+    // //get by section type
+    // if (0 == lfuci_get_first_option_by_stype("hello_2", "system_setion","url",name,NULL,NULL))
+    // {
+    //     printf("get by section type name is %s\n", name);
 
-    }
+    // }
 
 
     return;

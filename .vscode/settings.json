@@ -33,7 +33,9 @@
         "eloop.h": "c",
         "cstdint": "c",
         "http.h": "c",
-        "uci.h": "c"
+        "uci.h": "c",
+        "libwebsockets.h": "c",
+        "time.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
