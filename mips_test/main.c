@@ -34,8 +34,7 @@ void main(void)
 
 /*
 
- mipsel-openwrt-linux-gcc main.c -L /home/luke/openwrt/openwrt_19.07/staging_dir/target-mipsel_24kc_musl/usr/include -o b
+编译指令
+mipsel-openwrt-linux-gcc main.c -L /home/luke/openwrt/openwrt_19.07/staging_dir/target-mipsel_24kc_musl/usr/include -o b
 scp ./b  root@192.168.3.244:/tmp/b
-
-
  */

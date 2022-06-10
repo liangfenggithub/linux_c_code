@@ -40,8 +40,26 @@ uint64_t _TIMER_getAbsNow(void)
     return (r);
 }
 
+// typedef long time_t;
+// #ifndef _TIMESPEC
+// #define _TIMESPEC
+// struct timespec {
+// time_t tv_sec; // seconds
+// long tv_nsec; // and nanoseconds
+// };
+// #endif
+// struct timespec有两个成员，一个是秒，一个是纳秒, 所以最高精确度是纳秒。
+// 一般由函数int clock_gettime(clockid_t, struct timespec *)获取特定时钟的时间，常用如下4种时钟：
+// CLOCK_REALTIME 统当前时间，从1970年1.1日算起
+// CLOCK_MONOTONIC 系统的启动时间，不能被设置
+// CLOCK_PROCESS_CPUTIME_ID 本进程运行时间
+// CLOCK_THREAD_CPUTIME_ID 本线程运行时间
+// struct tm *localtime(const time_t *clock);  //线程不安全
+// struct tm* localtime_r( const time_t* timer, struct tm* result );//线程安全
+// size_t strftime (char* ptr, size_t maxsize, const char* format,const struct tm* timeptr );
+
 /*
- * 在当前时间上增加设定毫秒并转换出timespec
+ * 在当前时间上增加设定毫秒并转换出timespec 
  */
 void make_timespec(struct timespec *tv, long int timeout_mSecs)
 {
@@ -60,6 +78,19 @@ void make_timespec(struct timespec *tv, long int timeout_mSecs)
             tv->tv_nsec -= (1000 * 1000 * 1000);
     }
 }
+
+
+// struct timeval {
+// time_t tv_sec; // seconds
+// long tv_usec; // microseconds
+// };
+// struct timezone{
+// int tz_minuteswest; //miniutes west of Greenwich
+// int tz_dsttime; //type of DST correction
+// };
+
+// struct timeval有两个成员，一个是秒，一个是微秒, 所以最高精确度是微秒。
+// 一般由函数int gettimeofday(struct timeval *tv, struct timezone *tz)获取系统的时间
 
 
 int main(int argc, char *argv[])

@@ -35,7 +35,14 @@
         "http.h": "c",
         "uci.h": "c",
         "libwebsockets.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "dirent.h": "c",
+        "stdlib.h": "c",
+        "bit": "c",
+        "pthread.h": "c",
+        "errno.h": "c",
+        "mqueue.h": "c",
+        "list": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

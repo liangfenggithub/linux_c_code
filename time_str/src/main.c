@@ -73,11 +73,14 @@ int main(int argc, char *argv[])
 //     //3. 计算时间查 单位为秒
 //     printf("\n 3. 计算时间查 单位为秒\n");
 
-//     time_t first,second;  
-//     time(&first);  
-//     sleep(2);  
-//     time(&second);
-//     printf("时间查为: %f 秒\n",difftime(second,first));  //difftime 得到两次机器时间差，单位为秒
+    time_t first,second;  
+    time(&first);  
+    sleep(2);  
+    time(&second);
+    printf("first :%d\n",first);
+    printf("second :%d\n",second);
+
+    printf("时间查为: %f 秒\n",difftime(second,first));  //difftime 得到两次机器时间差，单位为秒
 
 //     /*注意:
 //     通过自定义的指针（struct tm *）对tm结构体成员的引用不包含赋值操作，除非另外定义tm结构体变量。
@@ -118,18 +121,18 @@ int main(int argc, char *argv[])
 
 
     //5. 字符串转时间戳
-    printf("\n 5. 字符串转时间戳\n");
+    // printf("\n 5. 字符串转时间戳\n");
 
-    char now[50] = "2022-02-24 11:39:00";
-    time_t now_stamp = timestr_to_time(now);
-    printf("字符串:%s 对应的时间戳为:%d",now,now_stamp);
+    // char now[50] = "2022-02-24 11:39:00";
+    // time_t now_stamp = timestr_to_time(now);
+    // printf("字符串:%s 对应的时间戳为:%d",now,now_stamp);
     
 
-    //6. 时间戳转字符串
-    printf("\n 6. 时间戳转字符串\n");
-    memset(time_str, '\0', 40);
-    time_to_timestr(now_stamp,time_str);
-    printf("时间戳:%d 对应的字符串结果为:%s\n",now_stamp, time_str);
+    // //6. 时间戳转字符串
+    // printf("\n 6. 时间戳转字符串\n");
+    // memset(time_str, '\0', 40);
+    // time_to_timestr(now_stamp,time_str);
+    // printf("时间戳:%d 对应的字符串结果为:%s\n",now_stamp, time_str);
 
 
     //7.用time()取得时间 (秒数), 利用localtime() 转换成struct tm 再利用mktine()将structtm 转换成原来的秒数。
