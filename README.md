@@ -16,6 +16,9 @@
 * parson json解析
 * uci_c c语言操作uci 增删查改 注意必须使用sudo执行，必须传入section name
 * mips_test mips gcc编译器测试
+    * io_interrupt_test mips应用层配置gpio输入中断实现
+    * io_test_use_xxx.c mips使用c、shell分别控制gpio翻转电平，测试应用层控制io速率
+    * endianness.c mips大小端测试
 * zip minizip-ng测试 c语言压缩解压缩zip文件
 * websocket c语言实现websocket 客户端
 * file 文件目录操作
