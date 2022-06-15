@@ -42,7 +42,11 @@
         "pthread.h": "c",
         "errno.h": "c",
         "mqueue.h": "c",
-        "list": "c"
+        "list": "c",
+        "unistd.h": "c",
+        "rtc.h": "c",
+        "ioctl.h": "c",
+        "i2c.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

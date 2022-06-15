@@ -19,6 +19,9 @@
     * io_interrupt_test mips应用层配置gpio输入中断实现
     * io_test_use_xxx.c mips使用c、shell分别控制gpio翻转电平，测试应用层控制io速率
     * endianness.c mips大小端测试
+    * i2c_test.c 应用层读写i2c总线控制 RTC 芯片 PCF8563每分钟输出一次中断下降沿
+    * rtc_test.c 应用层读写RTC芯片PCF8563
+    * rtc_alarm_test.c 应用层控制RTC芯片PCF8563分钟输出中断（未生效！）
 * zip minizip-ng测试 c语言压缩解压缩zip文件
 * websocket c语言实现websocket 客户端
 * file 文件目录操作
