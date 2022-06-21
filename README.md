@@ -3,6 +3,7 @@
 ## 构建方式
 * cmake
 * vscode 自带任务运行，支持调试
+* mips_test 下使用独立make编译，具体指令在c文件中。
 
 
 ## 程序如下
@@ -29,4 +30,5 @@
 * mq posix 消息队列测试
 * exe_shell c调用控制台执行脚本测试
 * mongoose_user mongoose网络库测试
+* regex c语言正则表达式测试
 
