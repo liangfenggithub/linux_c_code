@@ -81,7 +81,6 @@ void list_test(void)
     INIT_LIST_HEAD(&stu1.list);
     INIT_LIST_HEAD(&stu2.list);
 
-
     /**************************新增******************************/
     //头插法创建stu stu1链表
      for (int i = 0;i < 6;i++) {

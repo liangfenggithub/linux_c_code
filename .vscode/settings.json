@@ -46,7 +46,9 @@
         "unistd.h": "c",
         "rtc.h": "c",
         "ioctl.h": "c",
-        "i2c.h": "c"
+        "i2c.h": "c",
+        "string_view": "c",
+        "initializer_list": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
