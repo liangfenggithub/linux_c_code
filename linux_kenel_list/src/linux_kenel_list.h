@@ -165,7 +165,7 @@ static inline void list_replace(struct list_head *old,
 	new->prev = old->prev;
 	new->prev->next = new;
 }
-//
+//由于list_replace没有将old的前驱和后继断开，所以内核又提供了：list_replace_init替换之后会将old重新初始化，使其前驱和后继指向自身。
 static inline void list_replace_init(struct list_head *old,
                                      struct list_head *new)
 {
@@ -174,7 +174,7 @@ static inline void list_replace_init(struct list_head *old,
 }
 
 /**
- *  由于list_replace没有将old的前驱和后继断开，所以内核又提供了：list_replace_init替换之后会将old重新初始化，使其前驱和后继指向自身。
+ *  
  * list_del_init - deletes entry from list and reinitialize it.
  * @entry: the element to delete from the list.
  */

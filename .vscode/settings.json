@@ -48,7 +48,8 @@
         "ioctl.h": "c",
         "i2c.h": "c",
         "string_view": "c",
-        "initializer_list": "c"
+        "initializer_list": "c",
+        "sqlite3.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

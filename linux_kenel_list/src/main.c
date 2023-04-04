@@ -205,7 +205,7 @@ void list_test(void)
     
 void queue_test(void)
 {
-    struct student head;
+    struct student head; //注意head本身并未存储数据，第一个数据存储在head.list->next中
     struct student *pos,*n,*p;
     
     //初始化
@@ -239,9 +239,6 @@ void main(void)
 
     // list_test();
    queue_test(); //先进先出的FIFO测试
-
-
-
 }
 
 
